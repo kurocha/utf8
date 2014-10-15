@@ -1,6 +1,6 @@
 # Teapot configuration generated at 2013-07-03 14:06:09 +1200
 
-required_version "0.9.1"
+required_version "1.0"
 
 # Project Metadata
 
@@ -21,8 +21,10 @@ end
 # Build Targets
 
 define_target "utf8" do |target|
-	target.build do |environment|
-		build_directory(package.path, 'source', environment)
+	target.build do
+		source_root = target.package.path + 'source'
+		
+		copy headers: source_root.glob('utf8/**/*.{h,hpp}')
 	end
 	
 	target.depends :platform
