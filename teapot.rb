@@ -27,6 +27,8 @@ define_target "utf8" do |target|
 		copy headers: source_root.glob('utf8/**/*.{h,hpp}')
 	end
 	
+	target.depends "Build/Files"
+	
 	target.depends :platform
 	target.depends "Language/C++11"
 	
