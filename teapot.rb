@@ -30,7 +30,7 @@ define_target "utf8" do |target|
 	target.depends "Build/Files"
 	
 	target.depends :platform
-	target.depends "Language/C++11"
+	target.depends "Language/C++11", private: true
 	
 	target.provides "Library/utf8"
 end
